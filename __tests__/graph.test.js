@@ -13,6 +13,7 @@ describe('Graph', () => {
     expect(graph.adjacencyList.size).toEqual(0);
   });
 
+  // node tests
   test('should add a new node', () => {
     graph.addNode("Jasmine");
     expect(graph.adjacencyList.get("Jasmine").size).toEqual(0);
@@ -25,6 +26,15 @@ describe('Graph', () => {
   test('should return true if the node does exist in the adjacency list', () => {
     graph.addNode("Jasmine");
     expect(graph.hasNode("Jasmine")).toEqual(true);
+  });
+
+  //edge tests
+  test('should add an edge between two nodes', () => {
+    graph.addNode("Jasmine");
+    graph.addNode("Ada");
+    graph.createEdge("Jasmine", "Ada");
+    expect(graph.adjacencyList.get("Jasmine").has("Ada")).toEqual(true);
+    expect(graph.adjacencyList.get("Ada").has("Jasmine")).toEqual(true);
   });
 
 });
