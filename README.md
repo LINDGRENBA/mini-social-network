@@ -12,6 +12,10 @@ This project is an exercise in Graph Theory. It instantiates a graph with an emp
 ### Project Considerations :
 Why use a Map over a JavaScript object to store the list of relationships? A Map utilizes a hash table lookup algorithm under the hood, has helpful built in methods and according to the ES6 documentation is guaranteed to have an average sub-linear runtime complexity (o(1) or o(log n) for example) whereas iterating over an object has a runtime complexity of o(N) which may be fine for small datasets, but will be less efficient with larger data sets such as the relationships in a social network.
 
+### Future Goals :
+
+1. Refactor tests for greater efficiency (DRY it up)
+
 ### Setup on your local machine :
 
 **You will need npm to run this project**
