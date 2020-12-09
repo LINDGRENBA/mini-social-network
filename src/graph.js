@@ -23,4 +23,8 @@ export default class Graph {
     set2.add(node1);
   }
 
+  hasEdge(node1, node2) {
+    return false;
+  }
+
 }
