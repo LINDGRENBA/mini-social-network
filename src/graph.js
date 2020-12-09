@@ -24,6 +24,9 @@ export default class Graph {
   }
 
   hasEdge(node1, node2) {
+    if(this.adjacencyList.get(node1).has(node2)) {
+      return true;
+    }
     return false;
   }
 

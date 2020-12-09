@@ -29,13 +29,12 @@ describe('Graph', () => {
   });
 
   //edge tests
-  test('should add an edge between two nodes', () => {
+  test('should return true if edge is successfull added to two nodes', () => {
     graph.addNode("Jasmine");
     graph.addNode("Ada");
     graph.createEdge("Jasmine", "Ada");
-    expect(graph.adjacencyList.get("Jasmine").has("Ada")).toEqual(true);
-    expect(graph.adjacencyList.get("Ada").has("Jasmine")).toEqual(true);
-  });
+    expect(graph.hasEdge("Jasmine", "Ada")).toEqual(true);
+  }); //the graph is undirected so both "Jasmine", "Ada" and the reverse should return true
 
   test('should return false if edge does not exist in a graph', () => {
     graph.addNode("Jasmine");
