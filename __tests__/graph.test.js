@@ -22,4 +22,9 @@ describe('Graph', () => {
     expect(graph.hasNode("Ada")).toEqual(false);
   });
 
+  test('should return true if the node does exist in the adjacency list', () => {
+    graph.addNode("Jasmine");
+    expect(graph.hasNode("Jasmine")).toEqual(true);
+  });
+
 });

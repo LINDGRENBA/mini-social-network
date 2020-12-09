@@ -10,6 +10,9 @@ export default class Graph {
   }
 
   hasNode(name) {
+    if(this.adjacencyList.get(name)) {
+      return true;
+    }
     return false;
   }
 
