@@ -16,6 +16,18 @@ export default class Graph {
     return false;
   }
 
+  removeNode(name) {
+    if(this.adjacencyList.has(name)) {
+      //get the node if it exists
+      this.adjacencyList.get(name).forEach((edge) => {
+        //delete each edge associated with that node
+        this.adjacencyList.get(edge).delete(name);
+      });
+      //finally, delete the node itself
+      this.adjacencyList.delete(name);
+    }
+  }
+
   createEdge(node1, node2) {
     let set1 = this.adjacencyList.get(node1);
     let set2 = this.adjacencyList.get(node2);

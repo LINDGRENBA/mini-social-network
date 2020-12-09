@@ -28,6 +28,18 @@ describe('Graph', () => {
     expect(graph.hasNode("Jasmine")).toEqual(true);
   });
 
+  test('should delete a node and all of its adjacent nodes', () => {
+    graph.addNode("Jasmine");
+    graph.addNode("Ada");
+    graph.addNode("Lydia");
+    graph.createEdge("Jasmine", "Ada");
+    graph.createEdge("Lydia", "Ada");
+    graph.removeNode("Ada");
+    expect(graph.hasNode("Ada")).toEqual(false);
+    expect(graph.hasEdge("Jasmine", "Ada")).toEqual(false);
+    expect(graph.hasEdge("Lydia", "Ada")).toEqual(false);
+  })
+
   //edge tests
   test('should return true if edge is successfull added to two nodes', () => {
     graph.addNode("Jasmine");
